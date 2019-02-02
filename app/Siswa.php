@@ -1,0 +1,28 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Siswa extends Model
+{
+    public $primarykey = 'nis';
+
+    protected $table = "t_siswa";
+
+    protected $fillable = [
+    	'nis', 'nama_lengkap', 'jenis_kelamin', 'alamat', 'no_telp', 'id_kelas'
+    ];
+
+    public function getJeniskelaminDisplayAttribute()
+    {
+    	if (@$this->attributes['jenis_kelamin'] == 'L') return 'Laki-Laki';
+    	if (@$this->attributes['jenis_kelamin'] == 'P') return 'Perempuan';
+    	return '-';
+    }
+
+    public function kelas()
+   {
+   		return $this->hasOne('\App\Kelas', 'id_kelas', 'id_kelas');
+   }
+}
