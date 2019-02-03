@@ -4,7 +4,7 @@
    <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        {{ empty ($result) ? 'Tambah' : 'Edit' }} Data Kelas 
+        {{ empty ($result) ? 'Tambah' : 'Edit' }} Data Kelas Baru 
         <small>SMK Negeri 4 Bandung</small>
       </h1>
       <ol class="breadcrumb">
